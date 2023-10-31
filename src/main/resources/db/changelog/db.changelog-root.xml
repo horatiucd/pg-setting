@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="/db/changelog/schema-init.xml"/>
+
+    <changeSet id="repeatable" author="horatiucd" runOnChange="true">
+        <sqlFile dbms="postgresql" path="db/changelog/product-view.sql"/>
+    </changeSet>
+
+</databaseChangeLog>
