@@ -17,7 +17,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @SpringBootTest
-class ProductViewTest {
+class ProductTest {
 
     @Autowired
     private CurrencyRepository currencyRepository;
