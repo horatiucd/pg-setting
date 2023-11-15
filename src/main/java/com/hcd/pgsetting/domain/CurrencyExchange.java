@@ -10,8 +10,8 @@ import jakarta.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "currency_conversion")
-public class CurrencyConversion {
+@Table(name = "currency_exchange")
+public class CurrencyExchange {
 
     @Id
     @Column(name = "id", nullable = false)
@@ -31,11 +31,11 @@ public class CurrencyConversion {
     @Column(name = "value", nullable = false)
     private Double value;
 
-    public CurrencyConversion() {
+    public CurrencyExchange() {
 
     }
 
-    public CurrencyConversion(Long id, LocalDate date, Currency from, Currency to, Double value) {
+    public CurrencyExchange(Long id, LocalDate date, Currency from, Currency to, Double value) {
         this.id = id;
         this.date = date;
         this.from = from;

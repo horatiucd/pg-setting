@@ -43,7 +43,7 @@
     </changeSet>
 
     <changeSet author="horatiucd" id="500">
-        <createTable tableName="currency_conversion">
+        <createTable tableName="currency_exchange">
             <column name="id" type="BIGINT">
                 <constraints nullable="false"/>
             </column>
@@ -63,10 +63,10 @@
     </changeSet>
 
     <changeSet author="horatiucd" id="600">
-        <addPrimaryKey columnNames="id" constraintName="currency_conversion_pk" tableName="currency_conversion"/>
-        <addForeignKeyConstraint baseTableName="currency_conversion" baseColumnNames="from_currency_id" constraintName="from_currency_conversion_currency_fk"
+        <addPrimaryKey columnNames="id" constraintName="currency_exchange_pk" tableName="currency_exchange"/>
+        <addForeignKeyConstraint baseTableName="currency_exchange" baseColumnNames="from_currency_id" constraintName="from_currency_exchange_currency_fk"
                                  referencedTableName="currency" referencedColumnNames="id"/>
-        <addForeignKeyConstraint baseTableName="currency_conversion" baseColumnNames="to_currency_id" constraintName="to_currency_conversion_currency_fk"
+        <addForeignKeyConstraint baseTableName="currency_exchange" baseColumnNames="to_currency_id" constraintName="to_currency_exchange_currency_fk"
                                  referencedTableName="currency" referencedColumnNames="id"/>
     </changeSet>
 

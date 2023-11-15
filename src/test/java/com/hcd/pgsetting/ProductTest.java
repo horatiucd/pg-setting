@@ -1,10 +1,10 @@
 package com.hcd.pgsetting;
 
 import com.hcd.pgsetting.domain.Currency;
-import com.hcd.pgsetting.domain.CurrencyConversion;
+import com.hcd.pgsetting.domain.CurrencyExchange;
 import com.hcd.pgsetting.domain.Product;
 import com.hcd.pgsetting.domain.ProductView;
-import com.hcd.pgsetting.repository.CurrencyConversionRepository;
+import com.hcd.pgsetting.repository.CurrencyExchangeRepository;
 import com.hcd.pgsetting.repository.CurrencyRepository;
 import com.hcd.pgsetting.repository.ProductRepository;
 import org.junit.jupiter.api.Assertions;
@@ -26,14 +26,14 @@ class ProductTest {
     private ProductRepository productRepository;
 
     @Autowired
-    private CurrencyConversionRepository rateRepository;
+    private CurrencyExchangeRepository rateRepository;
 
     @Autowired
     private ProductService productService;
 
     private Currency ron, eur;
     private Product watch, painting;
-    private CurrencyConversion eurToRon, ronToEur;
+    private CurrencyExchange eurToRon, ronToEur;
     private LocalDate date;
 
     @BeforeEach
@@ -47,10 +47,10 @@ class ProductTest {
         productRepository.saveAll(List.of(watch, painting));
 
         date = LocalDate.now();
-        eurToRon = new CurrencyConversion(1L, date, eur, ron, 5.0d);
-        CurrencyConversion eurToEur = new CurrencyConversion(2L, date, eur, eur, 1.0d);
-        ronToEur = new CurrencyConversion(3L, date, ron, eur, .2d);
-        CurrencyConversion ronToRon = new CurrencyConversion(4L, date, ron, ron, 1.0d);
+        eurToRon = new CurrencyExchange(1L, date, eur, ron, 5.0d);
+        CurrencyExchange eurToEur = new CurrencyExchange(2L, date, eur, eur, 1.0d);
+        ronToEur = new CurrencyExchange(3L, date, ron, eur, .2d);
+        CurrencyExchange ronToRon = new CurrencyExchange(4L, date, ron, ron, 1.0d);
         rateRepository.saveAll(List.of(eurToRon, eurToEur, ronToEur, ronToRon));
     }
 
