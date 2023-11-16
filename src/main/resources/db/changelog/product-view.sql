@@ -17,7 +17,7 @@ SELECT p.id,
        p.price * e.value price,
        e.date,
        e.to_currency_id currency_id
-FROM pgsetting.product p
+FROM product p
 LEFT JOIN currency_exchange e on p.currency_id = e.from_currency_id and
                                  e.to_currency_id = current_setting('pgsetting.CurrencyId')::int and
                                  e.date = current_setting('pgsetting.CurrencyDate')::date;
