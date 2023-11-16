@@ -65,8 +65,10 @@ class ProductTest {
         Assertions.assertTrue(products.stream()
                 .allMatch(product -> product.getDate().equals(date)));
 
-        Assertions.assertEquals(watch.getPrice(), products.get(0).getPrice());
-        Assertions.assertEquals(painting.getPrice() * ronToEur.getValue(), products.get(1).getPrice());
+        Assertions.assertEquals(watch.getPrice(),
+                products.get(0).getPrice());
+        Assertions.assertEquals(painting.getPrice() * ronToEur.getValue(),
+                products.get(1).getPrice());
     }
 
     @Test
@@ -80,7 +82,9 @@ class ProductTest {
         Assertions.assertTrue(products.stream()
                 .allMatch(product -> product.getDate().equals(date)));
 
-        Assertions.assertEquals(watch.getPrice() * eurToRon.getValue(), products.get(0).getPrice());
-        Assertions.assertEquals(painting.getPrice(), products.get(1).getPrice());
+        Assertions.assertEquals(watch.getPrice() * eurToRon.getValue(),
+                products.get(0).getPrice());
+        Assertions.assertEquals(painting.getPrice(),
+                products.get(1).getPrice());
     }
 }
